@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+// import DataBindingComponent from './ DataBindingComponent';
 import './App.css';
 
 function App() {
+  const categories = ['Sports', 'Movies', 'Political'];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <form action='courseselector.dll' method='get'>
+        <p>Which course would you like to watch today</p>
+        <select name='c'>
+          <optgroup label='8.01 Physics I: Classical Mechanics'>
+            <option value='8.01.1'>Lecture 01: Powers of Ten</option>
+            <option value='8.01.2'>Lecture 02: 1D Kinematics</option>
+            <option value='8.01.3'>Lecture 03: Vectors</option>
+          </optgroup>
+          <optgroup label='8.02 Electricity and Magnetism'>
+            <option value='8.02.1'>
+              Lecture 01: What holds our world together?
+            </option>
+            <option value='8.02.2'>Lecture 02: Electric Field</option>
+            <option value='8.02.3'>Lecture 03: Electric Flux</option>
+          </optgroup>
+          <optgroup label='8.03 Physics III: Vibrations and Waves'>
+            <option value='8.03.1'>Lecture 01: Periodic Phenomenon</option>
+            <option value='8.03.2'>Lecture 02: Beats</option>
+            <option value='8.03.3'>
+              Lecture 03: Forced Oscillations with Damping
+            </option>
+          </optgroup>
+        </select>
+      </form>
+      <ol>
+        {categories.map((category) => {
+          return <li key={category}>{category}</li>;
+        })}
+      </ol>
     </div>
   );
 }

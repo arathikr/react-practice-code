@@ -5,7 +5,8 @@ import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import reportWebVitals from './reportWebVitals';
-import Debounce from './elementEvents/Debounce';
+// import Debounce from './elementEvents/Debounce';
+import IntervalDemo from './elementEvents/IntervalDemo';
 // import ElementEventsDemo from './elementEvents/ElementEventsDemo';
 // import UseReducerExample from './useHooks/UseReducerExample';
 // import ShoppingComponent from './ShoppingComponent';
@@ -15,7 +16,7 @@ import Debounce from './elementEvents/Debounce';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Debounce />
+    <IntervalDemo />
   </React.StrictMode>
 );
 

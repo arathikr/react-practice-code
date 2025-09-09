@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useSyncExternalStore } from 'react';
+import React, { useState, useRef } from 'react';
 
 const Debounce = () => {
   const [msg, setMsg] = useState('');
+  let m1 = useRef(null);
   function Msg1() {
     setMsg('Hello !');
   }
@@ -14,13 +14,17 @@ const Debounce = () => {
   }
 
   function handleShowClick() {
-    Msg1();
-    Msg2();
-    Msg3();
+    setTimeout(Msg1, 3000);
+    m1.current = setTimeout(Msg2, 6000);
+    setTimeout(Msg3, 10000);
+  }
+  function handleCancelClick() {
+    clearTimeout(m1);
   }
   return (
     <div className='container-fluid'>
       <button onClick={handleShowClick}>Show Msgs</button>
+      <button onClick={handleCancelClick}>Cancel 2nd Message</button>
       <p className='mt-4 h1'>{msg}</p>
     </div>
   );
